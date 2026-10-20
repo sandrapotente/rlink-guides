@@ -1,6 +1,6 @@
 # rlink-guides
 
-Static R-Link guides and process boards, served at https://guide.r-link.com.
+Static R-Link guides and process boards, served at https://guide.rallyblockchain.com.
 
 - Each guide is its own folder with an `index.html` → `guide.r-link.com/<folder-name>`.
 - No build step. Every push to `main` deploys on Vercel.
