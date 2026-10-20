@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rally Concierge Call Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@600;700;800&family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  --bg:#F5F6FB; --surface:#FFFFFF; --surface2:#EEF0F8; --ink:#141A3A; --muted:#545C7D; --line:#D9DDEC;
+  --navy:#0A1033; --purple:#6A2FD6; --purpleSoft:#EFE7FF; --green:#0E8F43; --greenSoft:#E3F6EB;
+  --amber:#8A5A00; --amberSoft:#FFF3D6; --red:#B42318; --redSoft:#FDECEA; --quote:#F3EEFF;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#070B24; --surface:#0E1438; --surface2:#151C48; --ink:#ECEFFF; --muted:#A9B0D6; --line:#262F66;
+    --purple:#C3A2FF; --purpleSoft:#22184A; --green:#6BEA9E; --greenSoft:#0F2F22; --amber:#FFD27A; --amberSoft:#33270B;
+    --red:#FF9A8F; --redSoft:#3A1513; --quote:#1B1846; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#070B24; --surface:#0E1438; --surface2:#151C48; --ink:#ECEFFF; --muted:#A9B0D6; --line:#262F66;
+  --purple:#C3A2FF; --purpleSoft:#22184A; --green:#6BEA9E; --greenSoft:#0F2F22; --amber:#FFD27A; --amberSoft:#33270B;
+  --red:#FF9A8F; --redSoft:#3A1513; --quote:#1B1846; color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 "Open Sans",system-ui,-apple-system,"Segoe UI",sans-serif}
+a{color:var(--purple)}
+:focus-visible{outline:3px solid var(--purple);outline-offset:2px;border-radius:6px}
+h1,h2,h3{font-family:"Raleway","Open Sans",system-ui,sans-serif;line-height:1.2;margin:0}
+
+.top{background:var(--navy);color:#fff}
+.top-in{max-width:1080px;margin:0 auto;padding:22px 20px 26px}
+.brandrow{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.word{font-family:"Raleway",sans-serif;font-weight:800;font-size:26px;letter-spacing:-.5px}
+.upd{font-size:13px;color:#C9CFEA}
+.top h1{font-size:clamp(30px,5vw,44px);font-weight:800;margin-top:22px;max-width:18ch}
+.top p{margin:10px 0 0;color:#D6DBF5;max-width:62ch}
+.bar{height:4px;background:linear-gradient(90deg,#7B3FE4,#12C35A)}
+
+main{max-width:1080px;margin:0 auto;padding:24px 20px 64px}
+
+.rules{background:var(--surface);border:2px solid var(--red);border-radius:18px;padding:18px 20px;margin-bottom:22px}
+.rules h2{font-size:22px;color:var(--red)}
+.rules p{margin:6px 0 10px;color:var(--muted)}
+.rules ul{margin:0;padding-left:22px;display:grid;gap:6px}
+.rules li strong{color:var(--ink)}
+
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin:6px 0 18px;border-bottom:1px solid var(--line)}
+.tabs button{appearance:none;border:0;background:transparent;color:var(--muted);font:700 15px "Open Sans",sans-serif;padding:12px 14px;min-height:44px;cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-1px}
+.tabs button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--purple)}
+.panel[hidden]{display:none}
+
+.intro{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-bottom:20px}
+.fact{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px 14px}
+.fact b{display:block;font-size:13px;color:var(--muted);font-weight:600}
+.fact span{font-weight:700}
+
+h2.sec{font-size:24px;margin:26px 0 10px}
+.prep{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+.prep ul{margin:0;padding-left:20px;display:grid;gap:4px}
+
+ol.steps{list-style:none;margin:0;padding:0;display:grid;gap:14px;counter-reset:s}
+ol.steps > li{counter-increment:s;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:16px 18px 16px 64px;position:relative}
+ol.steps > li::before{content:counter(s);position:absolute;left:18px;top:16px;width:32px;height:32px;border-radius:50%;background:var(--navy);color:#fff;font:800 15px/32px "Raleway",sans-serif;text-align:center}
+:root[data-theme="dark"] ol.steps > li::before{background:#2A3480}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) ol.steps > li::before{background:#2A3480}}
+ol.steps li.done{border-color:var(--green)}
+ol.steps li.done::before{background:var(--green)}
+.shead{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.shead h3{font-size:19px}
+.time{flex:none;font-size:13px;color:var(--muted);font-weight:600}
+.step p{margin:8px 0 0}
+.say{margin:10px 0 0;background:var(--quote);border-radius:12px;padding:10px 14px;font-style:italic}
+.say::before{content:"Say: ";font-style:normal;font-weight:700;color:var(--purple)}
+.ghl{margin:10px 0 0;font-size:14px;color:var(--muted)}
+.ghl b{color:var(--ink)}
+.dont{margin:10px 0 0;background:var(--redSoft);border-radius:12px;padding:8px 12px;font-size:14px}
+.dont b{color:var(--red)}
+ul.inner{margin:8px 0 0;padding-left:20px;display:grid;gap:6px}
+.mark{display:inline-flex;align-items:center;gap:8px;margin-top:12px;font-size:14px;font-weight:600;color:var(--muted);cursor:pointer;min-height:32px}
+.mark input{width:20px;height:20px;accent-color:#12C35A}
+.resetrow{display:flex;justify-content:flex-end;margin:10px 0 0}
+.btn{appearance:none;border:1px solid var(--line);background:var(--surface2);color:var(--ink);font:700 14px "Open Sans",sans-serif;border-radius:10px;padding:0 14px;min-height:40px;cursor:pointer}
+
+.after{background:var(--greenSoft);border-radius:14px;padding:14px 16px}
+.after ul{margin:0;padding-left:20px;display:grid;gap:4px}
+.pending{background:var(--amberSoft);border-radius:14px;padding:12px 16px;margin-top:14px;font-size:15px}
+.pending b{color:var(--amber)}
+
+dl.faq{margin:0;display:grid;gap:12px}
+.faq div{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+.faq dt{font-weight:700;font-family:"Raleway",sans-serif;font-size:17px}
+.faq dd{margin:6px 0 0}
+.faq dd q{display:block;margin-top:6px;background:var(--quote);border-radius:10px;padding:8px 12px;font-style:italic;quotes:none}
+
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:15px}
+th,td{padding:10px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+th{background:var(--surface2);font-size:13px;color:var(--muted)}
+tr:last-child td{border-bottom:0}
+
+.foot{margin-top:34px;font-size:13px;color:var(--muted)}
+@media (max-width:560px){ ol.steps > li{padding:56px 16px 16px} ol.steps > li::before{top:14px;left:16px} .shead{flex-direction:column;gap:2px} }
+@media (prefers-reduced-motion: reduce){*{scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="top-in">
+    <div class="brandrow"><span class="word">rally</span><span class="upd">Internal guide · Last updated Oct 20, 2026 (ET)</span></div>
+    <h1>Rally Concierge call guide</h1>
+    <p>Everything you need to run the Crypto Readiness Session and the Financing &amp; Purchase Session for Elevate Smart Bundle buyers: what to check before the call, what to say, what to do in GHL, and what never to do.</p>
+  </div>
+  <div class="bar" aria-hidden="true"></div>
+</header>
+
+<main>
+  <section class="rules" aria-labelledby="rulesTitle">
+    <h2 id="rulesTitle">Never, on any call</h2>
+    <p>These protect the buyer and us. They apply to both sessions, every time.</p>
+    <ul>
+      <li><strong>Never ask for</strong> passwords, private keys, seed or recovery phrases, or one-time codes. If a buyer starts to share one, stop them.</li>
+      <li><strong>Never take control</strong> of the buyer’s screen, device, exchange account or wallet, and never move funds for them. They do every click.</li>
+      <li><strong>Never give financial, investment, legal or tax advice</strong>, recommend an exchange or asset, or predict rewards or returns.</li>
+      <li><strong>Never give crypto guidance before the Onboarding Acknowledgment is signed.</strong></li>
+      <li><strong>Never share a wallet address yourself</strong> by chat, email or voice. The buyer copies it only from their order form.</li>
+      <li><strong>Never say or show internal names.</strong> You are the Rally Concierge.</li>
+    </ul>
+  </section>
+
+  <div class="tabs" role="tablist" aria-label="Guide sections">
+    <button role="tab" id="tab-crs" aria-controls="p-crs" aria-selected="true">Crypto Readiness Session</button>
+    <button role="tab" id="tab-fps" aria-controls="p-fps" aria-selected="false" tabindex="-1">Financing &amp; Purchase Session</button>
+    <button role="tab" id="tab-faq" aria-controls="p-faq" aria-selected="false" tabindex="-1">Buyer questions</button>
+    <button role="tab" id="tab-fix" aria-controls="p-fix" aria-selected="false" tabindex="-1">When something goes wrong</button>
+  </div>
+
+  <!-- CRYPTO READINESS SESSION -->
+  <section class="panel" id="p-crs" role="tabpanel" aria-labelledby="tab-crs">
+    <div class="intro">
+      <div class="fact"><b>Who books it</b><span>Buyers who aren’t crypto ready yet</span></div>
+      <div class="fact"><b>Length</b><span>30 minutes</span></div>
+      <div class="fact"><b>Goal</b><span>Their company account can send the down payment</span></div>
+      <div class="fact"><b>Not on this call</b><span>No price, quote or agreement</span></div>
+    </div>
+
+    <h2 class="sec">Before the call</h2>
+    <div class="prep"><ul>
+      <li>Read the Slack booking notification in #client_rally_elevate-bundle_sales: which answers need work, their sending limit and bundles.</li>
+      <li>Work out their down payment: bundles × $10,000, paid in USDT or USDC.</li>
+      <li>Have the Onboarding Acknowledgment ready to send from GHL (Documents &amp; Contracts).</li>
+      <li>Check the meeting link works and screen sharing is on.</li>
+    </ul></div>
+
+    <h2 class="sec">During the call</h2>
+    <ol class="steps" data-call="crs">
+      <li class="step"><div class="shead"><h3>Welcome and set the purpose</h3><span class="time">2 min</span></div>
+        <p class="say">Thanks for joining. Today is about getting your company’s crypto account ready so you can make your down payment when you’re ready to buy. I’ll explain how things generally work, and the decisions are always yours.</p>
+        <label class="mark"><input type="checkbox"> Done</label></li>
+
+      <li class="step"><div class="shead"><h3>Sign the Onboarding Acknowledgment</h3><span class="time">3 min</span></div>
+        <p>Send it from GHL while you’re on the call and wait until it’s signed. Give no crypto guidance until it is.</p>
+        <p class="say">Before we start, I’m sending a short acknowledgment. It explains what I can help with, what I’ll never ask you for, and what you’re responsible for. Take a minute to read it, and let me know when it’s signed.</p>
+        <p class="ghl"><b>In GHL:</b> confirm the document shows as signed on the contact. The <code>esb-onboarding-ack-signed</code> tag is added.</p>
+        <label class="mark"><input type="checkbox"> Done</label></li>
+
+      <li class="step"><div class="shead"><h3>Work through only what they flagged</h3><span class="time">15–20 min</span></div>
+        <p>Use their questionnaire answers. Skip anything they already have in place.</p>
+        <ul class="inner">
+          <li><b>No account, or not in the company’s name:</b> explain that most major exchanges offer business accounts and that the account must be in the company’s name. They choose the exchange.</li>
+          <li><b>Not fully verified:</b> finishing business verification is usually what raises the sending limit.</li>
+          <li><b>Sending limit below the down payment:</b> show where limits are usually found in account settings and how increases are requested. Increases can take days, so start now.</li>
+          <li><b>Needs to buy crypto:</b> the down payment is USDT or USDC only. Newly bought crypto can be held for a few days before it can be sent, so buy early.</li>
+          <li><b>Never sent to an outside wallet:</b> walk through how a transfer works: copy and paste the address (never type it), check the network, check the amount. Suggest practicing with a small amount between their own accounts.</li>
+        </ul>
+        <p class="dont"><b>Don’t</b> suggest a test transfer to Connect’s wallet, and don’t share any wallet address.</p>
+        <label class="mark"><input type="checkbox"> Done</label></li>
+
+      <li class="step"><div class="shead"><h3>Agree next steps</h3><span class="time">3 min</span></div>
+        <p>Recap what they’ll do and roughly when. Explain what happens next.</p>
+        <p class="say">You’ll get an email today with an “I’m crypto ready” button. Click it when your company’s account can send the down payment. Your answers are already filled in, so you just update what’s changed. Then you’ll book your Financing &amp; Purchase Session and preview your quote.</p>
+        <label class="mark"><input type="checkbox"> Done</label></li>
+    </ol>
+    <div class="resetrow"><button class="btn" type="button" data-reset="crs">Clear checkmarks for the next call</button></div>
+
+    <h2 class="sec">After the call</h2>
+    <div class="after"><ul>
+      <li>Mark the appointment <b>Showed</b> in GHL. This sends the “I’m crypto ready” email, with reminders after 3 and 7 days until they come back ready.</li>
+      <li>If they didn’t join, mark <b>No-show</b>. They get a link to rebook.</li>
+      <li>Add a short note on the contact: what they still need to do and any dates they gave.</li>
+    </ul></div>
+  </section>
+
+  <!-- FINANCING & PURCHASE SESSION -->
+  <section class="panel" id="p-fps" role="tabpanel" aria-labelledby="tab-fps" hidden>
+    <div class="intro">
+      <div class="fact"><b>Who books it</b><span>Crypto-ready buyers</span></div>
+      <div class="fact"><b>Length</b><span>45 minutes recommended</span></div>
+      <div class="fact"><b>Goal</b><span>Final quote confirmed, agreement signed, down payment sent</span></div>
+      <div class="fact"><b>Down payment</b><span>$10,000 per bundle, USDT or USDC</span></div>
+    </div>
+
+    <h2 class="sec">Before the call</h2>
+    <div class="prep"><ul>
+      <li>Open the <b>Pre-Call Quote Summary</b> from the Slack “Quote preview submitted” message (or the contact’s Quote Summary Link). Check their company details, bundles and term, and the live box: has the price changed, and are there enough licenses left at this price? Save it as a PDF if you want a copy.</li>
+      <li>Have the <b>Finalize Quote</b> link ready (same Slack message, or the contact’s Finalize Quote Link) and the team passcode.</li>
+      <li>Check whether the Onboarding Acknowledgment is signed. If not, have it ready to send from GHL.</li>
+      <li>Note their questionnaire answers, especially <b>Sent before</b>. If it’s No, plan extra time for the transfer.</li>
+    </ul></div>
+
+    <h2 class="sec">During the call</h2>
+    <ol class="steps" data-call="fps">
+      <li class="step"><div class="shead"><h3>Welcome and agenda</h3><span class="time">2 min</span></div>
+        <p class="say">Today we’ll confirm your final quote, go through your agreement while you sign it, and then I’ll stay with you while you send your down payment. You’ll do every step yourself; I’ll guide you.</p>
+        <label class="mark"><input type="checkbox"> Done</label></li>
+
+      <li class="step"><div class="shead"><h3>Onboarding Acknowledgment, if not signed</h3><span class="time">3 min</span></div>
+        <p>Buyers who skipped the Crypto Readiness Session sign it now, before anything else. Same wording as in the readiness session.</p>
+        <label class="mark"><input type="checkbox"> Done</label></li>
+
+      <li class="step"><div class="shead"><h3>Confirm the final quote</h3><span class="time">8 min</span></div>
+        <p>Open the <b>Finalize Quote</b> link and enter the team passcode. It’s pre-filled from their Quote Preview and shows the live Rally SmartNode price and licenses left at that price right now.</p>
+        <p class="say">Your preview was based on the price at the time. Let’s confirm your final numbers: is [X] bundles over [term] months still what you’d like? The price you see now is the one your agreement will lock when you sign.</p>
+        <ul class="inner">
+          <li>Check the company’s legal name, the authorized signer and title, and the address with them. The signer also signs the personal guaranty.</li>
+          <li>Change the quantity or term if they want to, and walk through the updated figures and payment schedule.</li>
+          <li>When they confirm, click <b>Finalize quote and send agreement</b>. If the price changed since you opened the page, you’ll see the new price; confirm it with them and finalize again.</li>
+        </ul>
+        <p class="dont"><b>Don’t</b> share the Finalize Quote link or the passcode with the buyer. Only you finalize the quote.</p>
+        <label class="mark"><input type="checkbox"> Done</label></li>
+
+      <li class="step"><div class="shead"><h3>Walk through the agreement while they sign</h3><span class="time">10 min</span></div>
+        <p>The agreement arrives in their email within a minute or two. With it open on their screen, point out: the purchase figures (Schedule A), the payment schedule (Schedule B), that every payment is made in USDT or USDC only, the personal guaranty, and that there are no guarantees about rewards or returns.</p>
+        <p class="say">For any question about what a term means legally, please check with your own counsel. I can walk you through the figures and the process.</p>
+        <p>They sign. If the price changed since the quote, a new agreement is sent automatically: review the new figures together, then they sign that one.</p>
+        <label class="mark"><input type="checkbox"> Done</label></li>
+
+      <li class="step"><div class="shead"><h3>Send the down payment</h3><span class="time">10 min</span></div>
+        <p>Open the order form with them. It shows the exact amount, the token and network, and Connect’s receiving wallet.</p>
+        <ul class="inner">
+          <li>They choose USDT or USDC and send on the network shown on the form.</li>
+          <li>They <b>copy and paste</b> the address from the order form (it matches the Seller Wallet Address in Schedule A of their signed agreement), then check the first and last few characters match.</li>
+          <li>If they’ve never sent to an outside wallet (“Sent before: No”), go slowly: confirm the network together, and check the first and last characters out loud before they press send.</li>
+          <li>Network fees are theirs, and only the amount received counts, so the amount that arrives must cover the full down payment.</li>
+          <li>Stay on the call until the form shows the payment confirmed.</li>
+        </ul>
+        <p class="say">Please copy the address from your order form only. If you ever receive a different address by email or message, don’t use it. Check with us first.</p>
+        <label class="mark"><input type="checkbox"> Done</label></li>
+
+      <li class="step"><div class="shead"><h3>Wrap up</h3><span class="time">3 min</span></div>
+        <ul class="inner">
+          <li>Their payment receipt arrives by email.</li>
+          <li>Connect countersigns and emails the fully signed agreement.</li>
+          <li>Licenses are issued within 10 business days.</li>
+          <li>Their first monthly payment date is in their agreement, and they’ll get access to the financing portal.</li>
+        </ul>
+        <label class="mark"><input type="checkbox"> Done</label></li>
+    </ol>
+    <div class="resetrow"><button class="btn" type="button" data-reset="fps">Clear checkmarks for the next call</button></div>
+
+    <h2 class="sec">If they can’t finish the payment on the call</h2>
+    <div class="prep"><ul>
+      <li>Find out why: sending limit, a hold on newly bought crypto, or verification.</li>
+      <li>Book a follow-up before the payment deadline and note the reason on the contact. The <code>esb-payment-pending</code> tag stays until payment is verified.</li>
+      <li>The agreement and price stay as signed. If the deadline passes, the agreement is voided and they start again.</li>
+    </ul></div>
+
+    <h2 class="sec">After the call</h2>
+    <div class="after"><ul>
+      <li>Mark the appointment <b>Showed</b> (or <b>No-show</b>, which sends a rebooking link and alerts the team).</li>
+      <li>Check the deal moved forward: agreement signed, payment verified, order placed.</li>
+      <li>Add a note on the contact with anything the team should know.</li>
+    </ul></div>
+
+    <div class="pending"><b>Still being finalized.</b> Confirm these with the team before your first live call: the payment deadline, the network and receiving wallet, what happens if slightly less than the down payment arrives, the first payment date and prorated first installment, and the optional Digital Rewards autopay election.</div>
+  </section>
+
+  <!-- BUYER QUESTIONS -->
+  <section class="panel" id="p-faq" role="tabpanel" aria-labelledby="tab-faq" hidden>
+    <h2 class="sec" style="margin-top:6px">How to answer common questions</h2>
+    <dl class="faq">
+      <div><dt>Is this an investment?</dt><dd>No. It’s a purchase of software licenses, financed by Connect.<q>This is a software license purchase. I can’t give investment, financial, legal or tax advice, so for those questions please speak with your own advisors.</q></dd></div>
+      <div><dt>How much will I earn in rewards?</dt><dd>Never estimate or imply a number.<q>Rewards depend on operating your nodes and on the network. The agreement makes no guarantees about rewards, returns or profit.</q></dd></div>
+      <div><dt>Can I pay by wire, card or bank transfer?</dt><dd><q>No. Under the agreement, every payment, including the down payment and monthly payments, is made in USDT or USDC.</q></dd></div>
+      <div><dt>Can you send it for me, or take over my screen?</dt><dd><q>I can’t. You do every step yourself, and I’ll guide you through it.</q></dd></div>
+      <div><dt>Can I buy as an individual?</dt><dd><q>Purchases are made by a company or other business entity. The person signing for the company also signs a personal guaranty.</q></dd></div>
+      <div><dt>When is my price locked?</dt><dd><q>The moment you sign your agreement. Until then the quote uses the current live price.</q></dd></div>
+      <div><dt>What about taxes?</dt><dd><q>I can’t advise on taxes. The agreement recommends speaking with your own CPA, especially about paying in crypto and about rewards.</q></dd></div>
+      <div><dt>Someone sent me a new wallet address. Should I use it?</dt><dd>Treat it as a warning sign.<q>Don’t use it. Only use the address on your order form. Any change to Connect’s wallet comes with written notice at least 10 business days ahead, and you’d confirm it with us another way first.</q></dd></div>
+    </dl>
+  </section>
+
+  <!-- WHEN SOMETHING GOES WRONG -->
+  <section class="panel" id="p-fix" role="tabpanel" aria-labelledby="tab-fix" hidden>
+    <h2 class="sec" style="margin-top:6px">When something goes wrong</h2>
+    <div class="tablewrap"><table>
+      <thead><tr><th scope="col">What happened</th><th scope="col">What to do</th></tr></thead>
+      <tbody>
+        <tr><td>The agreement email hasn’t arrived</td><td>Ask them to check spam and promotions. If it’s still missing after a few minutes, resend it from the contact in GHL.</td></tr>
+        <tr><td>The price changed when they signed</td><td>A new agreement is sent automatically at the current price. Review the new figures together before they sign.</td></tr>
+        <tr><td>The Finalize Quote page won’t open or says the link isn’t valid</td><td>Use the Finalize Quote Link on the GHL contact instead of Slack. If it still fails, post in the team channel.</td></tr>
+        <tr><td>Their sending limit is too low or the crypto is on hold</td><td>Book a follow-up before the payment deadline and note the reason on the contact.</td></tr>
+        <tr><td>They sent to the wrong address or network</td><td>Stay calm and don’t promise a fix: transfers usually can’t be reversed. Note the transaction hash, post it in the team channel, and tag the contact <code>esb-needs-attention</code>.</td></tr>
+        <tr><td>Less than the full down payment arrived</td><td>Note the amount and transaction hash and post in the team channel. Don’t tell them how to fix it until the team confirms the rule.</td></tr>
+        <tr><td>They want to change bundles or the term after signing</td><td>Post in the team channel before doing anything. A signed agreement can’t be edited on the call.</td></tr>
+      </tbody>
+    </table></div>
+    <p class="foot">Team channel: #client_rally_elevate-bundle_sales</p>
+  </section>
+
+  <p class="foot">Internal use only. Don’t share this guide with buyers.</p>
+</main>
+
+<script>
+(function(){
+  // Tabs (keyboard: left/right arrows)
+  const tabs = Array.from(document.querySelectorAll('[role=tab]'));
+  function show(t){
+    tabs.forEach(x=>{ const on = x===t; x.setAttribute('aria-selected', on); x.tabIndex = on?0:-1; document.getElementById(x.getAttribute('aria-controls')).hidden = !on; });
+    t.focus();
+  }
+  tabs.forEach((t,i)=>{
+    t.addEventListener('click', ()=>show(t));
+    t.addEventListener('keydown', e=>{
+      if (e.key==='ArrowRight'){ e.preventDefault(); show(tabs[(i+1)%tabs.length]); }
+      if (e.key==='ArrowLeft'){ e.preventDefault(); show(tabs[(i-1+tabs.length)%tabs.length]); }
+    });
+  });
+  // Step checkmarks, remembered on this device during a call
+  const KEY = 'rally-call-guide-steps';
+  let saved = {}; try{ saved = JSON.parse(localStorage.getItem(KEY)||'{}'); }catch(e){}
+  document.querySelectorAll('ol.steps').forEach(ol=>{
+    const call = ol.dataset.call;
+    ol.querySelectorAll(':scope > li').forEach((li,i)=>{
+      const cb = li.querySelector('.mark input'); const id = call+'-'+i;
+      cb.checked = !!saved[id]; li.classList.toggle('done', cb.checked);
+      cb.addEventListener('change', ()=>{
+        li.classList.toggle('done', cb.checked); saved[id] = cb.checked;
+        try{ localStorage.setItem(KEY, JSON.stringify(saved)); }catch(e){}
+      });
+    });
+  });
+  document.querySelectorAll('[data-reset]').forEach(b=>b.addEventListener('click', ()=>{
+    const call = b.dataset.reset;
+    document.querySelectorAll(`ol.steps[data-call="${call}"] > li`).forEach((li,i)=>{
+      li.classList.remove('done'); li.querySelector('.mark input').checked = false; delete saved[call+'-'+i];
+    });
+    try{ localStorage.setItem(KEY, JSON.stringify(saved)); }catch(e){}
+  }));
+})();
+</script>
+</body>
+</html>
