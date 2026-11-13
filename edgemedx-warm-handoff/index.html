@@ -118,13 +118,13 @@ details .body p:last-child{margin-bottom:0}
 .soon ul{margin:.5rem 0 0;padding-left:1.2rem}
 .soon li{margin-bottom:.4rem}
 
-.brandbar{background:#001233;padding:18px 0;border-bottom:1px solid #1F2E50}
+.brandbar{background:#FFFFFF;padding:18px 0;border-bottom:1px solid #E3E7F0}
 .brandbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
-.client{background:#FFFFFF;border-radius:10px;padding:10px 16px;display:inline-flex}
-.client img{display:block;height:44px;width:auto}
-.powered{display:flex;align-items:center;gap:10px;color:#C9D2E6;font-size:.85rem}
-.powered img{display:block;height:30px;width:auto;background:#FFFFFF;border-radius:8px;padding:6px 10px;box-sizing:content-box}
-@media (max-width:480px){.client img{height:34px}.powered img{height:24px}}
+.client{display:inline-flex}
+/* Both logos sit in identical white boxes: same width, height and padding; each logo is scaled to fit and centered */
+.client img,.powered img{display:block;box-sizing:content-box;width:200px;height:44px;padding:10px 16px;object-fit:contain;background:#FFFFFF;border-radius:10px}
+.powered{display:flex;align-items:center;gap:10px;color:#4A5578;font-size:.85rem}
+@media (max-width:480px){.client img,.powered img{width:150px;height:34px;padding:8px 12px}}
 footer{border-top:1px solid var(--line);padding:28px 0 40px;font-size:.9rem;color:var(--ink-soft)}
 
 @media (max-width:860px){
