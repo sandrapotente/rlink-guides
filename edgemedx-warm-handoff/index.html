@@ -148,7 +148,7 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;font-size:.9rem;colo
   <div class="wrap">
     <h1>The patient stays put. The specialist comes to them.</h1>
     <p class="lede">A complete guide to Warm Handoff in your Telehealth Clinic Rooms, for you, your doctors, and your call center team.</p>
-    <p class="meta"><strong>Last updated:</strong> October 20, 2026 at 6:52 AM ET</p>
+    <p class="meta"><strong>Last updated:</strong> November 2, 2026 at 5:21 AM ET</p>
   </div>
 </header>
 
@@ -162,8 +162,8 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;font-size:.9rem;colo
       <li><a href="#flow">A handoff, step by step</a></li>
       <li><a href="#controls">What the specialist can do</a></li>
       <li><a href="#edge">When things don’t go to plan</a></li>
+      <li><a href="#history">Finding past handoffs</a></li>
       <li><a href="#tips">Tips for your team</a></li>
-      <li><a href="#soon">Coming soon</a></li>
     </ol>
   </nav>
 
@@ -207,15 +207,17 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;font-size:.9rem;colo
         <ul>
           <li><strong>Default Handoff Email:</strong> enter the inbox your call center watches. Every doctor account you create uses this address automatically.</li>
           <li><strong>Allow doctors to change handoff email:</strong> leave this off to send every handoff to your call center. Turn it on to let doctors use their own address instead, for example an assistant’s.</li>
+          <li><strong>Sender name, sender email, and reply-to email:</strong> handoff emails come from your sender name and address, and replies go where you choose. Leave any field blank to use the default.</li>
           <li>Click <strong>Save Handoff Email</strong>.</li>
         </ul>
         <p style="margin:.75rem 0 0">If you change the default later, every doctor still using it updates automatically. Doctors who set their own email keep theirs. Make sure the default is always filled in, or handoff requests won’t reach anyone.</p>
+        <p style="margin:.75rem 0 0"><strong>Using your own sender email:</strong> your domain needs to be verified first. The card shows the DNS records to add and a status of Pending or Verified. Until it’s verified, emails send from the R-Link address, still using your sender name and reply-to.</p>
       </div>
 
       <div class="panel">
         <h3>In each doctor’s account</h3>
         <ul>
-          <li>Rooms are called <strong>Clinic Rooms</strong>. They have all the usual R-Link room settings, plus Warm Handoff.</li>
+          <li>Rooms are called <strong>Clinic Rooms</strong>. They have the room settings for the doctor’s plan, Basic or Business, plus Warm Handoff.</li>
           <li>The doctor’s settings show the handoff email. If you’ve allowed changes, the doctor can set one custom email, or use <strong>Reset to default</strong> to go back to yours.</li>
           <li>Each doctor’s alerts go to exactly one email address.</li>
         </ul>
@@ -248,7 +250,7 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;font-size:.9rem;colo
           <div class="num" aria-hidden="true">3</div>
           <span class="who"><span class="dot d-spec" aria-hidden="true"></span>Specialist</span>
           <h3>Your team gets the email</h3>
-          <p>The email shows the doctor’s name, the Clinic Room, and the time, with a <strong>Claim this call</strong> button. It contains no patient details, so it’s safe for a shared inbox.</p>
+          <p>The email shows the doctor’s name, the Clinic Room, and the time, with a <strong>Claim this call</strong> button. It contains no patient details, so it’s safe for a shared inbox. Your team has <strong>60 seconds</strong> to claim it.</p>
         </div>
 
         <div class="step">
@@ -278,7 +280,7 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;font-size:.9rem;colo
           <div class="num" aria-hidden="true">7</div>
           <span class="who"><span class="dot d-spec" aria-hidden="true"></span>Specialist</span>
           <h3>The specialist ends the call</h3>
-          <p>When the conversation is done, the specialist ends the call. Their host access ends with it, and the Clinic Room is free for the doctor again.</p>
+          <p>When the conversation is done, the specialist ends the call. Their host access ends with it, and the Clinic Room is free for the doctor again. The whole handoff is saved to the session’s history.</p>
         </div>
       </div>
     </section>
@@ -311,15 +313,23 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;font-size:.9rem;colo
       <details>
         <summary>The specialist loses their connection</summary>
         <div class="body">
-          <p>They have 60 seconds to reconnect, and they come back as host. While they’re gone, host passes back to the doctor if the doctor is still in the room. If the doctor already left, the patient sees “Reconnecting you with a specialist.”</p>
-          <p>After 60 seconds, the same claim link opens up again, so someone else on your team can claim it from the original email.</p>
+          <p>They have 60 seconds to reconnect, and they come back as host. While they’re gone, the patient sees “Reconnecting you with a specialist.” What happens after that depends on whether the doctor is still in the room.</p>
+          <p><strong>If the doctor is still in the room:</strong> host passes back to the doctor, who sees an alert that the specialist disconnected. After 60 seconds, the claim link opens up again and your team gets a new email, “Handoff reopened,” so someone else can claim it.</p>
+          <p><strong>If the doctor has already left:</strong> after 60 seconds, the patient sees “Your specialist was disconnected” and chooses what to do:</p>
+          <ul>
+            <li><strong>Request another specialist</strong> sends your team the “Handoff reopened” email. Whoever claims it joins the call right away and takes over as host.</li>
+            <li>If no one claims it within 60 seconds, the patient sees “No specialist is available right now” and can <strong>Try again</strong> or end the call.</li>
+            <li><strong>End call</strong> ends the session.</li>
+            <li>If the patient doesn’t respond for 3 minutes, the call ends on its own.</li>
+          </ul>
+          <p>Until someone else claims the call, the original specialist can still reconnect and pick up where they left off.</p>
         </div>
       </details>
 
       <details>
         <summary>Nobody claims the handoff</summary>
         <div class="body">
-          <p>If no one claims it within 10 minutes, the request expires and the link stops working. The doctor sees “No one claimed this handoff” and can send a new request or simply continue the call.</p>
+          <p>If no one claims it within 60 seconds, the request expires and the link stops working. The doctor sees “No one claimed this handoff” and can send a new request, which emails your team a fresh link, or simply continue the call.</p>
         </div>
       </details>
 
@@ -340,7 +350,7 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;font-size:.9rem;colo
       <details>
         <summary>The doctor needs to leave before anyone joins</summary>
         <div class="body">
-          <p>A room always needs a host, so until a specialist has been admitted, the doctor’s only way out is to end the call for everyone. That quietly cancels the handoff. A patient is never left alone in a room with no host.</p>
+          <p>A room always needs a host, so until a specialist has been admitted, the doctor’s only way out is to end the call for everyone. That quietly cancels the handoff, so a doctor can never leave a patient waiting alone for a specialist who hasn’t arrived.</p>
         </div>
       </details>
 
@@ -350,6 +360,33 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;font-size:.9rem;colo
           <p>They wait in that room’s waiting room. They can’t walk in on someone else’s conversation, because the specialist can’t admit new people. They’ll be let in once that call ends and the doctor opens the room. To avoid the wait, see the first tip for doctors below.</p>
         </div>
       </details>
+    </section>
+
+    <section id="history">
+      <h2>Finding past handoffs</h2>
+      <p class="intro">Every handoff is recorded from request to hang-up, right in the session where it happened.</p>
+
+      <div class="panel">
+        <h3>In the session itself</h3>
+        <p><span class="path">Sessions › Meeting History</span></p>
+        <ul>
+          <li>Meetings that included a handoff show a <strong>Handoff</strong> tag with its status. Use the <strong>With Handoff</strong> filter to see only those.</li>
+          <li>Click a meeting to open it. Below Participants, the <strong>Handoff History</strong> section shows who took the call, how quickly it was claimed, how long the specialist spent with the patient, and a step-by-step timeline.</li>
+        </ul>
+      </div>
+
+      <div class="table-scroll">
+        <table>
+          <thead><tr><th scope="col">Status</th><th scope="col">What it means</th></tr></thead>
+          <tbody>
+            <tr><td class="yes">Completed</td><td>A specialist was let in and the call ended normally.</td></tr>
+            <tr><td>Claimed after a drop</td><td>The first specialist lost their connection, and someone else picked up the call.</td></tr>
+            <tr><td>Cancelled</td><td>The doctor cancelled, or ended the call, before a specialist was let in.</td></tr>
+            <tr><td>Expired unclaimed</td><td>No one claimed the request within 60 seconds.</td></tr>
+            <tr><td>Ended after a drop</td><td>The specialist disconnected after the doctor left, and the call ended without another specialist joining.</td></tr>
+          </tbody>
+        </table>
+      </div>
     </section>
 
     <section id="tips">
@@ -366,7 +403,7 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;font-size:.9rem;colo
         <div class="panel">
           <h3>For your call center</h3>
           <ul>
-            <li>Keep the handoff inbox open with notifications on. Patients are live on the call while they wait.</li>
+            <li>Keep the handoff inbox open with notifications on. Each request can be claimed for 60 seconds, and patients are live on the call while they wait.</li>
             <li>Type your real name when you claim. It’s what the doctor and patient see.</li>
             <li>If your connection drops, rejoin from the same email within 60 seconds to keep the call.</li>
           </ul>
@@ -374,18 +411,6 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;font-size:.9rem;colo
       </div>
     </section>
 
-    <section id="soon">
-      <h2>Coming soon</h2>
-      <div class="soon">
-        <p style="margin:0">These improvements are in progress. We’ll update this guide when they go live.</p>
-        <ul>
-          <li><strong>Your own sender details:</strong> handoff emails will come from your sender name and email address, with replies going where you choose.</li>
-          <li><strong>A “Handoff reopened” email:</strong> if a specialist drops and the call opens back up, your team gets a fresh email, and the doctor sees an alert if they’re still in the room.</li>
-          <li><strong>A 60-second claim window:</strong> unclaimed requests will expire after 60 seconds instead of 10 minutes, so doctors can re-request quickly.</li>
-          <li><strong>Room settings by plan:</strong> Clinic Rooms will match the doctor’s plan, with Basic Room settings on Basic accounts and Business Room settings on Business accounts.</li>
-        </ul>
-      </div>
-    </section>
   </main>
 </div>
 
